@@ -1,25 +1,50 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
 
-function App() {
+export default function App() {
+
+const [member,setMember]= useState({username:'Andrej'});
+
+const drone = new window.Scaledrone('WL753f2kafQVXuG2',{data: member});
+drone.on('error', error => console.error(error));
+
+const room = drone.subscribe('observable-MyAppFinal');
+room.on('message', function(message) {
+console.log(drone);
+// provjeri da li sam ja poslao ovu poruku
+  if(message.clientId === drone.clientId){
+    console.log('poruka od mene')
+    console.log(message.data)
+  } else {
+    const sender = message.member;
+    console.log(message)
+    console.log(sender.clientData.username)
+    console.log(message.data)
+  }
+});
+
+drone.on('open', function(error) {
+  if (error) {
+    return console.error(error);
+  }
+  console.log('spojeno ' + drone.clientId);
+
+});
+
+const sendMsg=()=>{
+  drone.publish({
+    room: 'observable-MyAppFinal',
+    message: 'world'
+  });
+}
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div >
+      <button onClick={sendMsg}>klik</button>
+
+      <p></p>
     </div>
   );
 }
 
-export default App;
+
