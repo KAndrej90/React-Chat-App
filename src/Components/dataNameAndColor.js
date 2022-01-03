@@ -22,11 +22,10 @@
       "smoke", "star"
     ];
     const adjective = adjectives[Math.floor(Math.random() * adjectives.length)];
-    console.log(adjectives);
     const noun = nouns[Math.floor(Math.random() * nouns.length)];
     return adjective + noun;
   };
   
   export const randomColor= () => {
-    return '#' + Math.floor(Math.random() * 0xFFFFFF).toString(16);
+  return '#' + Math.floor(Math.random() * 0xFFFFFF).toString(16);
   };

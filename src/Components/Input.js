@@ -20,11 +20,11 @@ return (
     <>
         <form onSubmit={handleSubmit}>
             <input 
-            className="input"
+            className='input'
             onChange={changeText}
             value={text}
-            type="text"
-            placeholder="Enter message here"
+            type='text'
+            placeholder='Enter message here'
              >
             </input>
         </form>

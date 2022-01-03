@@ -1,7 +1,7 @@
 import {Component} from "react";
 import React from "react";
 
-class Messages extends Component {
+export default class Messages extends Component {
   render() {
     const {messages} = this.props;
     return (
@@ -11,13 +11,12 @@ class Messages extends Component {
     );
   }
 
-
-
   renderMessage(message) {
     const {member, text, id} = message;
-    console.log(message);
-    const {currentMember} = this.props;
-    const messageFromMe = id === currentMember.id;
+    // console.log(message);
+    const {currentId} = this.props;
+    // console.log(currentId);
+    const messageFromMe = member.id === currentId.id;
     const className = messageFromMe ?
       "Messages-message currentMember" : "Messages-message";
     return (
@@ -36,19 +35,3 @@ class Messages extends Component {
     );
   }
 }
-
-
-  // renderMessage(message) {
-  //   const {member, text, id} = message;
-  //   return (
-  //     <li key={id}>
-  //       {console.log(id)}
-  //       <div className="Message-content">
-  //         <div className="text">{text}</div>
-  //       </div>
-  //     </li>
-  //   );
-  // }
-
-
-export default Messages;
