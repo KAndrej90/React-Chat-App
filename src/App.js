@@ -2,7 +2,8 @@ import React, {useEffect, useState } from 'react';
 import './App.css';
 import Input from './Components/Input';
 import Messages from './Components/Messages';
-import { randomColor, randomName } from './Components/dataNameAndColor'; 
+import { randomColor, randomName } from './Components/DataNameAndColor'; 
+
 
 
 // let drone ={}
@@ -15,6 +16,7 @@ export default function App() {
   
   const [myId,setMyId]= useState([]);  
   const [messages, setMessages] = useState([]);
+  const [isDarkMode, setIsDarkMode] = useState(false);
   // const [lastMessage, setLastMessage] = useState('');
   
   
@@ -65,14 +67,14 @@ export default function App() {
         })
       };
       
-      
       return (
-        <div className='App'>
-      <div className='App-header'>
-        <h1>My Chat App</h1>
-      </div>
-      <Messages messages = {messages} currentId ={myId}/>
-      <Input onSendMessage={sendMessage}/>
+      <div className={isDarkMode ? 'App-dark' : 'App'}>
+        <div className={isDarkMode ? 'App-header-dark' : 'App-header'}>
+          <h1>Have a Nice Chat</h1>
+          <button className='btns' onClick={()=>setIsDarkMode(!isDarkMode)}>Dark Mode</button>
+        </div>
+        <Messages messages = {messages} currentId ={myId}/>
+        <Input onSendMessage={sendMessage}/>
      </div>
   );
 }

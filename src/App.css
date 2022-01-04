@@ -3,16 +3,42 @@
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
+  background-image: url('https://cdn.wallpapersafari.com/54/0/HluF7g.jpg');
+  background-size: contain;
+}
+
+.App-dark {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100vh;
+  background-image: url('https://fsa.zobj.net/crop.php?r=NEN5uU2X8IZQljHE49FZDNGoruapqy25QuFRFHmW_FJXPZLSISs0k3l9_cURQ4k6lKVtkUxUInJ8EqUbkH5qWqemTUwUpY143ZzJ1YBddr3vcFnbUcZoyUpZR5LnAuzFItbE5b9dXWag6Bgp1ZS2BWck1KtPxM_vu4NjXAjZtHrmW_m8burKmxUajifmLgkTkUPaD_Aa-_nYIRZ0');
+  background-size: contain;
 }
 
 .App-header {
-  background-color: #262626;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-image: url('https://fsa.zobj.net/crop.php?r=NEN5uU2X8IZQljHE49FZDNGoruapqy25QuFRFHmW_FJXPZLSISs0k3l9_cURQ4k6lKVtkUxUInJ8EqUbkH5qWqemTUwUpY143ZzJ1YBddr3vcFnbUcZoyUpZR5LnAuzFItbE5b9dXWag6Bgp1ZS2BWck1KtPxM_vu4NjXAjZtHrmW_m8burKmxUajifmLgkTkUPaD_Aa-_nYIRZ0');
   overflow: visible;
   width: 100%;
   text-align: center;
   color: white;
+  border-bottom: 20px solid grey;
 }
 
+.App-header-dark {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-image: url('https://cdn.wallpapersafari.com/54/0/HluF7g.jpg');
+  overflow: visible;
+  width: 100%;
+  text-align: center;
+  color: black;
+  border-bottom: 20px solid grey;
+}
 .Messages-list {
   padding: 20px 0;
   max-width: 900px;
@@ -37,6 +63,8 @@
 
 .Message-content {
   display: inline-block;
+  background-color: antiquewhite;
+  border-radius: 15px;
 }
 
 .currentMember > .Message-content {
@@ -44,23 +72,30 @@
 }
 
 .Messages-message > .avatar {
-  height: 35px;
-  width: 35px;
-  border-radius: 50%;
+  height: 50px;
+  /* width: 35px;  */
+  border-radius: 10px;
   display: inline-block;
   margin: 0 10px -10px;
+  justify-content: center;
 }
 
-.Message-content > .username {
+.username {
   display: block;
-  color: gray;
-  font-size: 14px;
-  padding-bottom: 4px;
+  color: black;
+  font-size: 20px;
+  /* padding-bottom: 4px; */
+  font-style: italic;
+  /* //dasdad */
+  padding-top: 15%;
+  
+  
 }
 
 .Message-content > .text {
+  font-size: 25px;
   padding: 10px;
-  max-width: 400px;
+  max-width: 800px;
   margin: 0;
   border-radius: 12px;
   background-color: cornflowerblue;
@@ -76,6 +111,7 @@ form {
   display: flex;
   width: 100%;
   justify-content: space-between;
+  margin-top: 20px;
   max-width: 900px;
   margin: 0 auto 40px;
 }
@@ -88,7 +124,8 @@ input {
   flex-grow: 1;
 }
 
-button {
+.btns {
+  height: 30px;
   padding: 5px 10px;
   font-size: 16px;
   background-color: orangered;
@@ -96,4 +133,11 @@ button {
   border: none;
   border-radius: 8px;
   margin-left: 10px;
+  margin-left: 40%;
+}
+
+.btns:hover{
+  transition: ease-out 1s;
+  cursor: pointer;
+  background-color: darkgreen;
 }

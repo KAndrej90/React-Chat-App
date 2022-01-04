@@ -21,14 +21,14 @@ export default class Messages extends Component {
       "Messages-message currentMember" : "Messages-message";
     return (
       <li className={className} key={id}>
-      <span
+      <span 
         className="avatar"
-        style={{backgroundColor: member.clientData.color}}
-      />
-        <div className="Message-content">
+        style={{backgroundColor: member.clientData.color}}>
           <div className="username">
             {member.clientData.username}
           </div>
+      </span>
+        <div className="Message-content">
           <div className="text">{text}</div>
         </div>
       </li>

@@ -24,9 +24,10 @@ return (
             onChange={changeText}
             value={text}
             type='text'
-            placeholder='Enter message here'
+            placeholder='"Lets talk"'
              >
             </input>
+            
         </form>
     </>
 );
