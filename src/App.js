@@ -5,10 +5,8 @@ import Messages from './Components/Messages';
 import { randomColor, randomName } from './Components/DataNameAndColor'; 
 
 
-
-// let drone ={}
-// let helpMessages = [];
-const member = {username:randomName(), color:randomColor()}
+let copyMembersOnline =[];
+const member = {username:randomName(), color:randomColor()};
 const drone = new window.Scaledrone('WL753f2kafQVXuG2',{data: member});
 const room = drone.subscribe('observable-MyAppFinal');
 console.log(drone)
@@ -17,7 +15,8 @@ export default function App() {
   const [myId,setMyId]= useState([]);  
   const [messages, setMessages] = useState([]);
   const [isDarkMode, setIsDarkMode] = useState(false);
-  // const [lastMessage, setLastMessage] = useState('');
+  const [membersOnline, setMembersOnline] = useState ([]);
+ 
   
   
   useEffect(()=> {
@@ -26,24 +25,22 @@ export default function App() {
       if (error) {
         return console.error(error);
       };
-        let ada = myId;
-        ada.id = drone.clientId;
-        setMyId(ada);
+        let copyMyId = myId;
+        copyMyId.id = drone.clientId;
+        setMyId(copyMyId);
         console.log(myId);
     });
     
-    
-    // room.on('data', (text, memb) => {
-      //   // console.log("receiving data");
-      //   console.log(text);
-      //   console.log(memb);
-      //   // const newMessages = [...messages];
-      //   const newMessages = [...helpMessages];
-      //   newMessages.push({member: memb, txt: text}); //here is defined object structure for one message
-      //   helpMessages = [...newMessages];
-      //   setMessages(newMessages);
-      // });
-      
+    room.on('members', m => {
+      // const {clientData} = m;
+      // console.log(m);
+      // console.log(clientData);
+      let memberOnline = m;
+      copyMembersOnline = [...memberOnline];
+      setMembersOnline (copyMembersOnline);
+      console.log(membersOnline);
+    });
+
       room.on('message', message => {
         const {data, id, member} = message;
         console.log(message);
@@ -53,9 +50,7 @@ export default function App() {
         } else { let msgs = messages;
           msgs.push({member: member, text: data, id:id});
           let newMsgs = [...msgs];
-          setMessages(newMsgs);}
-          // setallMembers(allMembers.push(clientId))
-          // console.log(clientId);
+          setMessages(newMsgs)};
         });
         
       }, []);   
@@ -70,10 +65,10 @@ export default function App() {
       return (
       <div className={isDarkMode ? 'App-dark' : 'App'}>
         <div className={isDarkMode ? 'App-header-dark' : 'App-header'}>
-          <h1>Have a Nice Chat</h1>
+          <h1>Have a Nice Chat...</h1>
           <button className='btns' onClick={()=>setIsDarkMode(!isDarkMode)}>Dark Mode</button>
         </div>
-        <Messages messages = {messages} currentId ={myId}/>
+        <Messages messages = {messages} currentId ={myId} membersOnline={membersOnline}/>
         <Input onSendMessage={sendMessage}/>
      </div>
   );

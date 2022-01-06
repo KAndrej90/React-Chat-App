@@ -1,8 +1,14 @@
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
+
 .App {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100vh;
+  width: 100vw;
   background-image: url('https://cdn.wallpapersafari.com/54/0/HluF7g.jpg');
   background-size: contain;
 }
@@ -17,6 +23,7 @@
 }
 
 .App-header {
+  font-family: "Pushster", cursive;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -29,6 +36,7 @@
 }
 
 .App-header-dark {
+  font-family: "Pushster", cursive;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -39,6 +47,7 @@
   color: black;
   border-bottom: 20px solid grey;
 }
+
 .Messages-list {
   padding: 20px 0;
   max-width: 900px;
@@ -48,6 +57,8 @@
   padding-left: 0;
   flex-grow: 1;
   overflow: auto;
+  border-left:1px solid black;
+  border-right: 1px solid black;
 }
 
 .Messages-message {
@@ -72,8 +83,7 @@
 }
 
 .Messages-message > .avatar {
-  height: 50px;
-  /* width: 35px;  */
+  height: 40px;
   border-radius: 10px;
   display: inline-block;
   margin: 0 10px -10px;
@@ -81,26 +91,26 @@
 }
 
 .username {
+  height: 25px;
   display: block;
-  color: black;
+  color: white;
   font-size: 20px;
-  /* padding-bottom: 4px; */
   font-style: italic;
-  /* //dasdad */
-  padding-top: 15%;
-  
-  
+  padding-top: 10px;
 }
 
 .Message-content > .text {
-  font-size: 25px;
+  font-size: 20px;
   padding: 10px;
-  max-width: 800px;
+  max-width: 400px;
   margin: 0;
+  word-wrap: break-word;
   border-radius: 12px;
   background-color: cornflowerblue;
   color: white;
   display: inline-block;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .currentMember > .Message-content .text {
@@ -125,6 +135,7 @@ input {
 }
 
 .btns {
+  font-family: "Pushster", cursive;
   height: 30px;
   padding: 5px 10px;
   font-size: 16px;
