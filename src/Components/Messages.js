@@ -4,14 +4,12 @@ import React from "react";
 export default class Messages extends Component {
   render() {
     const {messages} = this.props;
-    const {membersOnline} = this.props;
-    console.log(membersOnline);
+    // const {membersOnline} = this.props;
+    // console.log(membersOnline);
     return (
-      
       <ul className="Messages-list">
         {messages.map(m => this.renderMessage(m))}
       </ul>
-      
     );
   }
 

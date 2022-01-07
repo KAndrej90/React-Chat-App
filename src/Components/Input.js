@@ -5,30 +5,29 @@ export default function Input({onSendMessage}) {
 const [text, setText] = useState('');
 
 const changeText =(e)=>{
-    const askd = e.target.value;
-    setText(askd.trimStart());
+    const chatText = e.target.value;
+    setText(chatText.trimStart());
 }
 
 const handleSubmit =(e)=>{
     e.preventDefault();
     onSendMessage(text);
     setText('');
-
 }
 
 return (
-    <>
-        <form onSubmit={handleSubmit}>
+    <div>
+        <form onSubmit={handleSubmit} className="formChat">
             <input 
-            className='input'
+            className='inputChat'
             onChange={changeText}
             value={text}
             type='text'
             placeholder='"Lets talk"'
-             >
-            </input>
+            autoFocus={true}
             
+             ></input> 
         </form>
-    </>
+    </div>
 );
 }

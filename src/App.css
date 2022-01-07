@@ -20,6 +20,7 @@ body {
   height: 100vh;
   background-image: url('https://fsa.zobj.net/crop.php?r=NEN5uU2X8IZQljHE49FZDNGoruapqy25QuFRFHmW_FJXPZLSISs0k3l9_cURQ4k6lKVtkUxUInJ8EqUbkH5qWqemTUwUpY143ZzJ1YBddr3vcFnbUcZoyUpZR5LnAuzFItbE5b9dXWag6Bgp1ZS2BWck1KtPxM_vu4NjXAjZtHrmW_m8burKmxUajifmLgkTkUPaD_Aa-_nYIRZ0');
   background-size: contain;
+
 }
 
 .App-header {
@@ -46,8 +47,19 @@ body {
   text-align: center;
   color: black;
   border-bottom: 20px solid grey;
+
+}
+.App-header-dark > .btns {
+  background-color: darkgreen;
 }
 
+.App-header-dark > .btns:hover {
+    transition: ease-out 1s;
+    cursor: pointer;
+    background-color: orangered;
+}
+
+/* Message component */
 .Messages-list {
   padding: 20px 0;
   max-width: 900px;
@@ -57,8 +69,8 @@ body {
   padding-left: 0;
   flex-grow: 1;
   overflow: auto;
-  border-left:1px solid black;
-  border-right: 1px solid black;
+  border-left:1px solid orangered;
+  border-right: 1px solid orangered;
 }
 
 .Messages-message {
@@ -67,7 +79,6 @@ body {
 }
 
 .Messages-message.currentMember {
-  /*justify-content: flex-end;*/
   flex-direction: row-reverse;
   text-align: right;
 }
@@ -86,7 +97,7 @@ body {
   height: 40px;
   border-radius: 10px;
   display: inline-block;
-  margin: 0 10px -10px;
+  margin: 0 10px;
   justify-content: center;
 }
 
@@ -96,14 +107,13 @@ body {
   color: white;
   font-size: 20px;
   font-style: italic;
-  padding-top: 10px;
+  padding: 10px;
 }
 
 .Message-content > .text {
   font-size: 20px;
   padding: 10px;
   max-width: 400px;
-  margin: 0;
   word-wrap: break-word;
   border-radius: 12px;
   background-color: cornflowerblue;
@@ -117,7 +127,7 @@ body {
   background-color: orangered;
 }
 
-form {
+.formChat {
   display: flex;
   width: 100%;
   justify-content: space-between;
@@ -126,7 +136,7 @@ form {
   margin: 0 auto 40px;
 }
 
-input {
+.inputChat {
   padding: 5px;
   font-size: 16px;
   border-radius: 8px;
@@ -152,3 +162,47 @@ input {
   cursor: pointer;
   background-color: darkgreen;
 }
+
+/* Login component */
+.loginCard {
+  height: 200px;
+  width: 400px;
+  background-image: url('https://fsa.zobj.net/crop.php?r=NEN5uU2X8IZQljHE49FZDNGoruapqy25QuFRFHmW_FJXPZLSISs0k3l9_cURQ4k6lKVtkUxUInJ8EqUbkH5qWqemTUwUpY143ZzJ1YBddr3vcFnbUcZoyUpZR5LnAuzFItbE5b9dXWag6Bgp1ZS2BWck1KtPxM_vu4NjXAjZtHrmW_m8burKmxUajifmLgkTkUPaD_Aa-_nYIRZ0');
+  margin: auto auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  border-radius: 1.5em;
+  color: white;
+  font-size:x-large;
+  font-family: "Pushster", cursive;
+  background-size: contain;
+  border:  10px solid white;
+}
+
+.loginInput {
+  width: 200px;
+  height: 20px;
+  border-radius: 5px;
+  /* font-family: "Pushster", cursive; */
+  font-family:cursive;
+  border: white;
+  
+  
+}
+
+.loginBtn {
+  display: block;
+  margin: auto;
+  margin-top: 30px;
+  font-family: "Pushster", cursive;
+  height: 40px;
+  width: 90px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: white 1px solid;
+  cursor:pointer;
+  background-color: black;
+  color: white;
+}
+
