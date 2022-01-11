@@ -7,7 +7,6 @@ const [username, setUsername] = useState('');
 const enterUsername =(e)=>{
     const newUsername = e.target.value;
     setUsername(newUsername.trimStart());
-    console.log(username);
 }
 
 const handleSubmiter =(e)=>{
@@ -20,8 +19,8 @@ const handleSubmiter =(e)=>{
 return (
     <div className="loginCard">
         <form onSubmit={handleSubmiter}>
-          <label htmlFor='username'> Username: </label>
-          <input
+            <label htmlFor='username'> Username: </label>
+            <input
             name="username"
             className="loginInput"
             value={username}
@@ -31,7 +30,7 @@ return (
             autoFocus={true}
             autoComplete="off"
             />
-         <button className='loginBtn' disabled={username ===''} type="submit" onSubmit={handleSubmiter}>Enter Chat</button>        
+            <button className='loginBtn' disabled={username ===''} type="submit" onSubmit={handleSubmiter}>Enter Chat</button>        
         </form>
     </div>
 );

@@ -4,10 +4,9 @@ import React from "react";
 export default class Messages extends Component {
   render() {
     const {messages} = this.props;
-    // const {membersOnline} = this.props;
-    // console.log(membersOnline);
+
     return (
-      <ul className="Messages-list">
+      <ul className="messages-list">
         {messages.map(m => this.renderMessage(m))}
       </ul>
     );
@@ -18,7 +17,7 @@ export default class Messages extends Component {
     const {currentId} = this.props;
     const messageFromMe = member.id === currentId.id;
     const className = messageFromMe ?
-      "Messages-message currentMember" : "Messages-message";
+      "messages-message currentMember" : "messages-message";
     return (
       <li className={className} key={id}>
       <span 
@@ -28,7 +27,7 @@ export default class Messages extends Component {
             {member.clientData.username}
           </div>
       </span>
-        <div className="Message-content">
+        <div className="message-content">
           <div className="text">{text}</div>
         </div>
       </li>
