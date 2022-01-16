@@ -4,8 +4,8 @@ import Input from './Components/Input';
 import Messages from './Components/Messages';
 import Login from './Components/Login';
 
-let drone='';
 let addedMember={};
+let drone='';
 const randomColor= () => {
 return '#' + Math.floor(Math.random() * 0xFFFFFF).toString(16);
   };

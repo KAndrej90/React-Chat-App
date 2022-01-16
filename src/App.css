@@ -87,7 +87,7 @@ body {
     border-radius: 15px;
   }
   
-  .currentMember > .Message-content {
+  .currentMember > .message-content {
     align-items: flex-end;
   }
   
@@ -114,14 +114,14 @@ body {
     max-width: 400px;
     word-wrap: break-word;
     border-radius: 12px;
-    background-color: cornflowerblue;
+    background-color:  rgb(255, 153, 0);
     color: white;
     display: inline-block;
     justify-content: space-evenly;
     align-items: center;
   }
   
-  .currentMember > .Message-content .text {
+  .currentMember > .message-content .text {
     background-color: orangered;
   }
   
